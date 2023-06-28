@@ -1,5 +1,8 @@
 package com.minato.gaecicdtest.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import com.vs.rappit.base.util.Constants;
 import com.minato.gaecicdtest.exception.ErrorMessages;
 
 import com.minato.gaecicdtest.exception.ErrorCodes;
@@ -99,12 +102,12 @@ implements IApplicationUserService<ApplicationUser>
 		return user;
 	}
 	
-	@Override
+//	@Override
 	public ApplicationUser createAdminUser(String email) {
 		ApplicationUser user = new ApplicationUser();
 		user.setEmail(email);
 		user.setDevAdmin(true);
-		user.setFirstName(Constants.ADMIN_USER);
+//		user.setFirstName(Constants.ADMIN_USER);
 		List<String> role = new ArrayList<>();
 		role.add(Roles.DEVADMIN.getRoleName());
 		user.setUserRoles(role);
