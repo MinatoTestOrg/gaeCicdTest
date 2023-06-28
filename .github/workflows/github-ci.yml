@@ -35,7 +35,7 @@ jobs:
             npm install -g @angular/cli
             mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
             cd BackendApp
-            mvn -s .m2/settins.xml --batch-mode appengine:deployAll -P dev
+            mvn -s .m2/settings.xml --batch-mode appengine:deployAll -P dev
   
   pre-prod-deployment:
     if: contains( github.ref, 'pre-prod')
