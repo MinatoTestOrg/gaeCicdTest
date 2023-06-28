@@ -1,0 +1,13 @@
+runtime: java17
+instance_class: F2
+service: gaecicdtest
+vpc_access_connector:
+  name: @vpc-connector@
+env_variables:
+  SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET: @client-secret@
+  SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID: @client-id@
+handlers:
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto

@@ -1,0 +1,1 @@
+[{"value":"/rest/task/submit/{id}","key":"task_base_url"},{"value":"!@#$%$&pass!@##$","key":"jwt_secret"},{"value":"vb-eva-gen-attachments","key":"attachment_bucket_name"}]

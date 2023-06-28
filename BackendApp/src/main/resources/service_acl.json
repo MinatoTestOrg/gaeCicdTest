@@ -1,0 +1,153 @@
+{
+  "table1s": {
+    "post": {
+      "/datatable": [
+        "Development Administrator"
+      ],
+      "/": [
+        "Development Administrator"
+      ]
+    },
+    "get": {
+      "/{sid}": [
+        "Development Administrator"
+      ],
+      "/autosuggest": [
+        "Development Administrator"
+      ]
+    },
+    "put": {
+      "/": [
+        "Development Administrator"
+      ]
+    },
+    "delete": {
+      "/{ids}": [
+        "Development Administrator"
+      ],
+      "/{id}/delete/{ids}": [
+        "Development Administrator"
+      ]
+    }
+  },
+  "workflowhistory": {
+    "post": {
+      "/{workflowType}/{modelid}/datatable": [
+        "PermitAll"
+      ]
+    }
+  },
+  "attachments": {
+    "post": {
+      "/link": [
+        "PermitAll"
+      ],
+      "/upload": [
+        "PermitAll"
+      ]
+    },
+    "get": {
+      "/download/attachment/{attachment_id}": [
+        "PermitAll"
+      ],
+      "/download/inline/{attachment_id}": [
+        "PermitAll"
+      ],
+      "/all/{modelKey}": [
+        "PermitAll"
+      ]
+    },
+    "delete": {
+      "/{ids}}": [
+        "PermitAll"
+      ]
+    }
+  },
+  "environmentinfo": {
+    "get": {
+      "/": [
+        "PermitAll"
+      ]
+    }
+  },
+  "workflowconfig": {
+    "get": {
+      "/getconfig/{workflowType}": [
+        "PermitAll"
+      ]
+    }
+  },
+  "changelogs": {
+    "post": {
+      "/datatable/{entityName}/{entityId}/{fieldName}/{fromModifiedDate}": [
+        "PermitAll"
+      ]
+    }
+  },
+  "applicationusers": {
+    "post": {
+      "/datatable": [
+        "Development Administrator"
+      ],
+      "/": [
+        "Development Administrator"
+      ]
+    },
+    "get": {
+      "/user-details": [
+        "PermitAll"
+      ],
+      "/{sid}": [
+        "Development Administrator"
+      ],
+      "/autosuggest": [
+        "Development Administrator"
+      ]
+    },
+    "put": {
+      "/": [
+        "Development Administrator"
+      ]
+    },
+    "delete": {
+      "/{ids}": [
+        "Development Administrator"
+      ]
+    },
+    "options": {}
+  },
+  "otp": {
+    "post": {
+      "/validateotp/{otp}": [
+        "PermitAll"
+      ],
+      "/generateandsendotp": [
+        "PermitAll"
+      ],
+      "/forgotpasswordotp": [
+        "PermitAll"
+      ]
+    }
+  },
+  "usernotificationsyncinfo": {
+    "put": {
+      "/updatesynctime": [
+        "PermitAll"
+      ]
+    }
+  },
+  "notifications": {
+    "post": {
+      "/notifications/datatable": [
+        "PermitAll"
+      ]
+    }
+  },
+  "deploy": {
+    "post": {
+      "/setup": [
+        "Development Administrator"
+      ]
+    }
+  }
+}

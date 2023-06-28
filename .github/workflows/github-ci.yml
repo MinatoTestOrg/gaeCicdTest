@@ -1,0 +1,132 @@
+name: Deployment script
+run-name: Deployment runner
+on: [push]
+
+jobs:
+  dev-deployment:
+    if: contains( github.ref, 'development')
+    runs-on: ubuntu-latest
+    container: node:16-alpine
+    steps:
+      - name: Setting up environment for build...
+        run: |
+          apk add --no-cache git maven bash curl wget
+          apk --no-cache add openjdk17-jdk
+          apk add --no-cache python3 py3-pip
+          curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-425.0.0-linux-x86_64.tar.gz > /tmp/google-cloud-cli.tar.gz
+          mkdir -p /usr/local/gcloud
+          tar -xzf /tmp/google-cloud-cli.tar.gz -C /usr/local/gcloud
+          chmod -R 777 /usr/local/gcloud/
+          /usr/local/gcloud/google-cloud-sdk/install.sh --quiet
+          PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
+      - name: Checking out repo...
+        uses: actions/checkout@v3
+
+      - name: Building project...
+        run: |
+          - uses: google-github-actions/auth@v0
+          with:
+            credentials_json: ${{secrets.SERVICE_ACCOUNT_KEYFILE_JSON}}
+            sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
+            sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
+            npm install -g @angular/cli
+            mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
+            cd BackendApp
+            mvn -s .m2/settins.xml --batch-mode appengine:deployAll -P dev
+  
+  pre-prod-deployment:
+    if: contains( github.ref, 'pre-prod')
+    runs-on: ubuntu-latest
+    container: node:16-alpine
+    steps:
+      - name: Setting up environment for build...
+        run: |
+          apk add --no-cache git maven bash curl wget
+          apk --no-cache add openjdk17-jdk
+          apk add --no-cache python3 py3-pip
+          curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-425.0.0-linux-x86_64.tar.gz > /tmp/google-cloud-cli.tar.gz
+          mkdir -p /usr/local/gcloud
+          tar -xzf /tmp/google-cloud-cli.tar.gz -C /usr/local/gcloud
+          chmod -R 777 /usr/local/gcloud/
+          /usr/local/gcloud/google-cloud-sdk/install.sh --quiet
+          PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
+      - name: Checking out repo...
+        uses: actions/checkout@v3
+
+      - name: Building project...
+        run: |
+          - uses: google-github-actions/auth@v0
+          with:
+            credentials_json: ${{secrets.SERVICE_ACCOUNT_KEYFILE_JSON}}
+            sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
+            sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
+            npm install -g @angular/cli
+            mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
+            cd BackendApp
+            mvn -s .m2/settins.xml --batch-mode appengine:deployAll -P pre-prod
+
+  test-deployment:
+    if: contains( github.ref, 'test')
+    runs-on: ubuntu-latest
+    container: node:16-alpine
+    steps:
+      - name: Setting up environment for build...
+        run: |
+          apk add --no-cache git maven bash curl wget
+          apk --no-cache add openjdk17-jdk
+          apk add --no-cache python3 py3-pip
+          curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-425.0.0-linux-x86_64.tar.gz > /tmp/google-cloud-cli.tar.gz
+          mkdir -p /usr/local/gcloud
+          tar -xzf /tmp/google-cloud-cli.tar.gz -C /usr/local/gcloud
+          chmod -R 777 /usr/local/gcloud/
+          /usr/local/gcloud/google-cloud-sdk/install.sh --quiet
+          PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
+      - name: Checking out repo...
+        uses: actions/checkout@v3
+
+      - name: Building project...
+        run: |
+          - uses: google-github-actions/auth@v0
+          with:
+            credentials_json: ${{secrets.SERVICE_ACCOUNT_KEYFILE_JSON}}
+            sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
+            sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
+            npm install -g @angular/cli
+            mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
+            cd BackendApp
+            mvn -s .m2/settins.xml --batch-mode appengine:deployAll -P test
+
+  prod-deployment:
+    if: contains( github.ref, 'prod')
+    runs-on: ubuntu-latest
+    container: node:16-alpine
+    steps:
+      - name: Setting up environment for build...
+        run: |
+          apk add --no-cache git maven bash curl wget
+          apk --no-cache add openjdk17-jdk
+          apk add --no-cache python3 py3-pip
+          curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-425.0.0-linux-x86_64.tar.gz > /tmp/google-cloud-cli.tar.gz
+          mkdir -p /usr/local/gcloud
+          tar -xzf /tmp/google-cloud-cli.tar.gz -C /usr/local/gcloud
+          chmod -R 777 /usr/local/gcloud/
+          /usr/local/gcloud/google-cloud-sdk/install.sh --quiet
+          PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
+      - name: Checking out repo...
+        uses: actions/checkout@v3
+
+      - name: Building project...
+        run: |
+          - uses: google-github-actions/auth@v0
+          with:
+            credentials_json: ${{secrets.SERVICE_ACCOUNT_KEYFILE_JSON}}
+            sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
+            sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
+            npm install -g @angular/cli
+            mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
+            cd BackendApp
+            mvn -s .m2/settins.xml --batch-mode appengine:deployAll -P prod

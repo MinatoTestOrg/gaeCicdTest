@@ -1,0 +1,240 @@
+$primary-highlight-color: #3f6ad8;
+$primary-form-bg-color: #ffffff;
+$error-bg-color: #f00;
+$error-border-color: #f00;
+$white-color: #ffff;
+
+//topbar
+$header-background-color: #ffff;
+$header-font-family: "Poppins";
+$header-font-style: normal;
+$header-font-weight: normal;
+$header-font-size: 1.6rem;
+
+$header-primary-color: #3f6ad8;
+$header-secondary-color: #72767b;
+
+$header-primary-font-size: 1rem;
+$header-secondary-font-size: 1.5rem;
+
+$primary-icon-size: 2rem;
+
+$header-primary-icon-font-size: 1.5rem;
+$header-secondary-icon-font-size: 1rem;
+
+$header-primary-icon-color: #3f6ad8;
+$header-secondary-icon-color: #72767b;
+
+$app-title-color: #3f6ad8;
+$app-title-font-size: 1.8rem;
+$app-theme-background-color: #f2f3f7;
+
+$sidebar-font-family: "Poppins";
+$sidebar-font-style: normal;
+$sidebar-font-weight: normal;
+$sidebar-font-size: 1.6rem;
+
+$sidebar-background-color: #ffff;
+$sidebar-active-menu-background-color: #e0f3ff;
+
+$sidebar-menu-font-color: #1a73e8;
+$sidebar-menu-font-size: 1.6rem;
+$sidebar-menu-icon-color: #1a73e8;
+
+$sidebar-float-menu-font-color: #72767b;
+$sidebar-float-menu-font-size: 1.4rem;
+$sidebar-float-menu-icon-color: #72767b;
+
+$sidebar-submenu-font-color: #5f6368;
+$sidebar-submenu-font-size: 1.5rem;
+$sidebar-submenu-icon-color: #5f6368;
+$sidebar-submenu-background-color-hover: #e0f3ff;
+
+$sidebar-float-submenu-font-color: #72767b;
+$sidebar-float-submenu-font-size: 1.4rem;
+$sidebar-float-submenu-icon-color: #72767b;
+
+// Grid-variables
+
+$primary-color: #1a73e8;
+$primary-color-2: #458dec;
+$primary-color-3: #76abf0;
+
+$secondary-color: #ffff;
+$secondary-color-1: #e6e6e6;
+$secondary-color-2: #f4f4f4;
+$secondary-color-3: #f8f9fa;
+$secondary-color-4: #e8f0fd;
+$secondary-color-5: #dadce0;
+
+$ternary-color: #72767b;
+$ternary-color-1: #9f9f9f;
+$ternary-color-2: #a5a5a5;
+$ternary-color-3: #4c576d;
+
+$app-title-fontsize: 24px;
+$secondary-font-size: 1.3rem;
+$ternary-font-size: 10px;
+
+$primary-font-family: "Poppins";
+$primary-font-size: 1.6rem;
+$primary-font-style: "normal";
+$primary-font-weight: "normal";
+
+// $table
+
+//Detail Form
+$form-control-border-radius: 0.6rem;
+$form-control-height: 3.2rem;
+$form-control-font-size: 1.2rem;
+
+// Home page
+$home-page-card-title-font-color: #1a73e8;
+$home-page-card-title-font-size: 1.6rem;
+$home-page-card-desc-font-color: #9f9f9f;
+$home-page-card-desc-font-size: 1rem;
+$home-page-card-background-color: #ffffff;
+$home-page-card-button-background-color: #1a73e8;
+$home-page-card-button-font-color: #ffffff;
+$home-page-card-button-font-size: 1.2rem;
+$home-page-font-family: "Poppins";
+$home-page-font-style: normal;
+$home-page-font-weight: normal;
+$home-page-font-size: 1.6rem;
+
+//Grid Variables
+
+$list-header-font-family: "Poppins";
+$list-header-background-color: #1a73e8;
+$list-header-font-size: 1.3rem;
+$list-header-text-color: #ffff;
+$list-header-font-weight: 500;
+$list-header-font-style: normal;
+
+$list-body-font-family: "Poppins";
+$list-body-background-color: #ffff;
+$list-body-hover-background-color: #f6f6f6;
+$list-body-text-color: #72767b;
+$list-body-font-size: 1.2rem;
+$list-body-font-weight: 400;
+$list-body-font-style: normal;
+
+$list-checkbox-header-background-color: #1a73e8;
+$list-checkbox-header-selection-color: #ffff;
+$list-checkbox-body-background-color: #ffff;
+$list-checkbox-body-selection-color: #1a73e8;
+$list-checkbox-body-border-color: #dadce0;
+
+$list-row-hover-border-color: #1a73e8;
+$scroll-bar-track-background-color: #ffff;
+$scroll-bar-thumb-background-color: #1a73e8;
+
+$sort-active: #ffff;
+$sort-inactive: #458dec;
+$sort-badge-color: #ffff;
+
+$list-subheader-background: transparent;
+$list-subheader-text-color: #72767b;
+$list-subheader-font-size: 1.3rem;
+$list-subheader-font-weight: 600;
+$list-subheader-row-height: 1.5rem;
+$list-subheader-font-family: "Poppins";
+$list-subheader-font-style: normal;
+
+$list-navigation-icon-color: #1a73e8;
+$list-grid-border-color: #e3e5e7;
+
+//Title Bar
+
+$list-titlebar-background-color: #ffff;
+$detail-titlebar-background-color: #1a73e8;
+$list-page-title-color: #72767b;
+$detail-page-title-color: #f8f9fa;
+$page-title-font-size: 1.8rem;
+$page-title-font-family: "Poppins";
+$page-title-font-weight: normal;
+$page-title-font-style: normal;
+
+//Buttons - Detail
+$detail-button-background-color: #1a73e8;
+$detail-button-text-color: #ffff;
+$list-button-background-color: #ffff;
+$list-button-text-color: #1a73e8;
+$list-button-border-color:#5f9def;
+$button-font-family: "Poppins";
+$button-font-size: 1.35rem;
+
+//Search
+
+$search-background-color: #ffff;
+$search-border-color: #1a73e8;
+$search-text-color: #72767b;
+$search-font-family: "Poppins";
+$search-font-size: 1.35rem;
+$search-font-style: normal;
+$search-font-weight: normal;
+$search-placeholder-text-color: #a5a5a5;
+$search-placeholder-font-size: 1.3rem;
+
+// Advanced-search
+$advanced-search-background-color: #ffff;
+$advanced-search-title-color:#1a73e8;
+$advanced-search-primary-button-background-color:#1a73e8;
+$advanced-search-secondary-button-background-color:#9e9fa0;
+$advanced-search-primary-button-label-color:#ffff;
+$advanced-search-secondary-button-label-color:#ffff;
+
+//Caption Bar
+
+$caption-title-font-size: 1rem;
+$caption-subtitle-font-size: 1.2rem;
+$caption-font-color: #ffff;
+$caption-font-family: "Poppins";
+$caption-font-size: 1.2rem;
+$caption-font-style: normal;
+$caption-font-weight: normal;
+
+$detail-form-background-color: #ffffff;
+$detail-form-text-color: #72767b;
+$detail-form-control-text-color: #495057;
+$detail-form-button-background-color: #ffff;
+$detail-form-button-color: #000;
+$detail-form-button-hover-background-color: #1a73e887;
+$detail-form-button-font-color: #1a73e8;
+$detail-form-button-box-shadow-color: #d6d6d6;
+$detail-form-primary-button-background-color: #dadce0;
+$detail-form-primary-button-border-color: #72767b;
+$detail-form-control-border-color: #e0dfdf;
+$detail-form-radio-border-color: #dadce0;
+$detail-form-error-background-color: #f00;
+$detail-form-error-border-color: #f00;
+$detail-form-control-border-radius: 0.8rem;
+$detail-form-section-header-font-color: #1a73e8;
+$detail-form-section-header-border-color: #1a73e8;
+$detail-form-tab-link-color: #1a73e8;
+$detail-form-outer-tab-background-color: #f1f4f6;
+$detail-form-tab-background-color: #ffffff;
+$detail-form-tab-nav-background-color: #f1f4f6;
+$detail-form-inner-tab-background-color: #ffffff;
+$detail-form-inner-tab-font-color: #2196f3;
+$detail-form-control-error-border-color: #f44336;
+$detail-form-control-border-color: #e0dfdf;
+$detail-form-inner-section-header-font-color: #777;
+$detail-form-inner-section-header-border-color: #999;
+$detail-form-control-text-color: #495057;
+$actionbar-default-button-background-color: #ffff;
+$actionbar-default-button-border-color: #1a73e8;
+$actionbar-primary-button-border-color: #1a73e8;
+
+$base-box-shadow-display: none;
+$base-disable-mask-position: unset;
+$base-disable-mask-z-index: unset;
+$base-disable-mask-width: unset;
+$base-disable-mask-height: unset;
+$spinner-color: #3f6ad8;
+$breadcrumb-font-color: #ffff;
+$breadcrumb-font-weight: normal;
+$breadcrumb-font-size: 1.3rem;
+
+$reset-columns-icon-color: #3f6ad8;
+$reset-columns-modal-bg-color: #fff;

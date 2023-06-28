@@ -1,0 +1,3 @@
+com.minato.gaecicdtest.config.ApplicationRepositoriesAutoConfiguration
+com.minato.gaecicdtest.config.ApplicationTransactionManagersAutoConfig
+com.minato.gaecicdtest.config.ApplicationProvidersAutoConfiguration

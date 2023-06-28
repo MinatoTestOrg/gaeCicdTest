@@ -1,0 +1,21 @@
+{
+  "left": [
+    {
+      "accessControl": [
+        "Development Administrator"
+      ],
+      "onClick": "",
+      "backgroundColor": "",
+      "currentNode": "menuItem",
+      "showBadge": false,
+      "label": "Home",
+      "url": "",
+      "dummy": 1651125237620,
+      "size": "",
+      "valueChange": true,
+      "showOnlyIcon": "",
+      "fontColor": "",
+      "element": "menuItem"
+    }
+  ]
+}
