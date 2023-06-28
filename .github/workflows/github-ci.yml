@@ -30,8 +30,8 @@ jobs:
 
       - name: Building and deploying project...
         run: |
-            sed -i 's/${ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
-            sed -i 's/${ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
+            sed -i 's/${env.ARTIFACTORY_USER}/${{secrets.ARTIFACTORY_USER}}/' .m2/settings.xml
+            sed -i 's/${env.ARTIFACTORY_PASS}/${{secrets.ARTIFACTORY_PASS}}/' .m2/settings.xml
             npm install -g @angular/cli
             mvn -s .m2/settings.xml --batch-mode clean install -Dclient-id=${{secrets.CLIENT_ID}} -Dclient-secret=${{secrets.CLIENT_SECRET}}
             cd BackendApp
