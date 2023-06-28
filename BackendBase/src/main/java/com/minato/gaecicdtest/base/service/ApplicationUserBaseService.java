@@ -233,9 +233,4 @@ public abstract class ApplicationUserBaseService<T extends ApplicationUserBase> 
 
 	@Override
 	public void onAfterGeneratedValidation(List<ValidationError> validationErrors) {}
-	
-	@Override
-	public boolean isTableEmpty(){
-		return isTableEmpty(PersistenceType.DB);	
-	}
 }
