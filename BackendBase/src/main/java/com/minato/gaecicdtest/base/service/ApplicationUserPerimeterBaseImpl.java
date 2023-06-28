@@ -9,7 +9,6 @@ import org.apache.commons.lang3.BooleanUtils;
 import com.vs.rappit.base.authentication.logic.AppUserPrivilegeCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import com.vs.rappit.springsecurity.base.authentication.WhitelistedAdminUserProvisioningService;
 import com.vs.rappit.base.acl.IPerimeterManager;
 import com.minato.gaecicdtest.base.model.ApplicationUserBase;
 
@@ -21,9 +20,6 @@ public abstract class ApplicationUserPerimeterBaseImpl<T extends ApplicationUser
 	@Autowired
 	Environment environment;
 	
-	@Autowired
-	private WhitelistedAdminUserProvisioningService provisioningService;
-	
 	List <String> adminList = Arrays.asList(environment.getProperty("admin_users").toLowerCase().split(","));
 	
 	@Override
@@ -33,9 +29,7 @@ public abstract class ApplicationUserPerimeterBaseImpl<T extends ApplicationUser
 		if(userBase!=null){
 			if (BooleanUtils.isTrue(userBase.isDevAdmin())) { return true; }
 			
-		}  if (provisioningService.isWhitelistesAdminUser(model.getEmail())) {
-			return true;
-		}
+		} 
 		return false;
 	}
 
@@ -63,9 +57,6 @@ public abstract class ApplicationUserPerimeterBaseImpl<T extends ApplicationUser
 			if(userBase.getEmail().equalsIgnoreCase(model.getEmail())) { return true; }
 			
 			
-		}
-		if (provisioningService.isWhitelistesAdminUser(model.getEmail())) {
-			return true;
 		}
 		return false;
 	}
@@ -107,11 +98,6 @@ public abstract class ApplicationUserPerimeterBaseImpl<T extends ApplicationUser
 				return;
 			}
 			
-		}
-		if (provisioningService.isWhitelistesAdminUser(userBase.getEmail())) {
-			allowedAccessFields.add("*");
-			allowedFields.setAllowedWriteFields(allowedAccessFields);
-			return;
 		}
 		allowedFields.setAllowedWriteFields(allowedAccessFields);
 	}
